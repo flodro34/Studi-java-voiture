@@ -6,11 +6,34 @@ public class Voiture {
 
     String nom;
 
+    boolean state;
+
     public Voiture(){
         //init des éléments
         this.energie = Energie.ESSENCE;
         this.nom = "K-2000";
+        this.state = true;
     }
+    public Voiture(Energie energie){
+        //init des éléments
+        this.energie = energie;
+        this.nom = "K-2000";
+        this.state = true;
+    }
+    public Voiture(Energie energie, boolean isState){
+        //init des éléments
+        this.energie = energie;
+        this.nom = "K-2000";
+        this.state = isState;
+    }
+    public Voiture(Energie energie,String nom, boolean state){
+        //init des éléments
+        this.energie = energie;
+        this.nom = nom;
+        this.state = state;
+    }
+
+
 
     @Override
     public String toString(){
@@ -22,9 +45,7 @@ public class Voiture {
     }
 
     public void setEnergie(Energie energie) {
-        this.energie = energie;
-        // on peut empêche le changement si besoin
-        // par ex : On met juste un message -> System.out.println ("pas de changement possible ! ")
+        System.out.println ("pas de changement possible ! ");
     }
 
     public String getNom() {
@@ -33,5 +54,13 @@ public class Voiture {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public boolean isState(){
+        return state;
+    }
+
+    public void setState(Boolean state) {
+        this.state = state;
     }
 }

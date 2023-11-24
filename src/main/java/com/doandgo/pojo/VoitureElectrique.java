@@ -3,6 +3,6 @@ package com.doandgo.pojo;
 public class VoitureElectrique extends Voiture{
 
     public VoitureElectrique(){
-        super();
+        super(Energie.ELECTRIQUE, false);
     }
 }
